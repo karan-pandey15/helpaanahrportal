@@ -57,7 +57,7 @@ export default defineConfig({
     // Vercel rewrite used in production).
     proxy: {
       "/api": {
-        target: "https://helpaanahrportalbackend.vercel.app",
+        target: "https://helpaanahrportalbackend-pe89e1481-karans-projects-0eff4843.vercel.app/",
         changeOrigin: true,
       },
     },
