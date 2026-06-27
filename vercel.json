@@ -1,0 +1,9 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "https://hr-management-portal-backend-ruby.vercel.app/api/$1"
+    },
+    { "source": "/(.*)", "destination": "/" }
+  ]
+}

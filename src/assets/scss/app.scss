@@ -1,0 +1,271 @@
+@use "./layout";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// @layer base {
+//   body {
+//     @apply h-full overflow-x-hidden dark:text-slate-300 text-slate-600 font-normal;
+
+//     &.light,
+//     &.skin--default {
+//       @apply bg-slate-100;
+//     }
+
+//     &.dark {
+//       @apply bg-[#0f172a] text-slate-300;
+//     }
+//   }
+
+//   html,
+//   body {
+//     @apply h-full;
+//   }
+
+//   .dashcode-app-wrapper {
+//     @apply relative;
+//   }
+// }
+
+@layer base {
+  body {
+    @apply h-full overflow-x-hidden dark:text-slate-300 text-slate-600 font-normal;
+  &.light,
+  &.skin--default {
+      @apply bg-primary-500 text-black-500;
+    }
+    &.lght,
+    &.skin--bordered {
+      @apply bg-transparent;
+    }
+    &.dark {
+      @apply bg-[#0f172a] text-slate-300;
+    }
+  }
+  html,
+  body {
+    @apply h-full !p-0;
+  }
+
+  .dashcode-app-wrapper {
+    @apply relative;
+  }
+  .single-sidebar-menu .ReactCollapse--collapse {
+    transition: height 400ms;
+  }
+
+  .space-xy-5 {
+    > div,
+    > button,
+    > a,
+    label,
+    > * {
+      @apply mr-2 mb-2;
+    }
+  }
+  .space-xy-6 {
+    > div,
+    > button,
+    > a,
+    label,
+    > * {
+      @apply mr-4 mb-2;
+    }
+  }
+
+  html[dir="rtl"] {
+    .recharts-wrapper {
+      direction: rtl;
+    }
+    .recharts-yAxis {
+      .recharts-text {
+        text-anchor: start;
+      }
+    }
+  }
+  .dashcode-app {
+    .leaflet-control {
+      z-index: 0 !important;
+    }
+    .leaflet-control-container {
+      z-index: 555 !important;
+      position: relative;
+    }
+    .recharts-curve.recharts-tooltip-cursor {
+      display: none;
+    }
+    .recharts-wrapper.bar-chart {
+      .recharts-tooltip-cursor {
+        fill: transparent;
+      }
+    }
+    .recharts-tooltip-wrapper {
+      border: none !important;
+    }
+
+    // .recharts-cartesian-grid line,
+    // .recharts-polar-grid-angle line,
+    // .recharts-yAxis line,
+    // .recharts-xAxis line {
+    //   @apply stroke-black-200 dark:stroke-slate-700;
+    // }
+  }
+}
+
+.react-datepicker-wrapper {
+  width: 100%;
+}
+
+.interview-datetime-picker {
+  width: 100%;
+  padding: 8px 16px;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 4px;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  transition: border-color 0.2s;
+}
+.interview-datetime-picker:hover {
+  border-color: #9ca3af;
+}
+.interview-datetime-picker:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(24, 152, 165, 0.18);
+}
+/* Hide disabled time options */
+.react-datepicker__time-list-item--disabled {
+  display: none !important;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+  border-radius: 6px;
+  background: transparent;
+}
+
+/* Track */
+*::-webkit-scrollbar-track {
+  border-radius: 6px;
+  background: transparent;
+}
+
+/* Handle */
+*::-webkit-scrollbar-thumb {
+  background: #0f5159;
+  border-radius: 6px;
+}
+
+/* Handle on hover */
+*::-webkit-scrollbar-thumb:hover {
+  background: #ffff;
+}
+
+:root {
+  --theme-primary: #ffff;
+  --theme-primary-dark: #147e89;
+  --theme-primary-soft: #e9fbfd;
+  --theme-surface: #f7feff;
+  --theme-text: #050505;
+}
+
+body {
+  background: var(--theme-primary) !important;
+  color: var(--theme-text);
+}
+
+.page-content {
+  background: var(--theme-primary);
+  color: var(--theme-text);
+}
+
+.app-header,
+.site-footer,
+.card {
+  background-color: var(--theme-surface) !important;
+  color: var(--theme-text) !important;
+}
+
+.sidebar-wrapper,
+.logo-segment,
+.site-footer {
+  background-color: var(--theme-primary) !important;
+  color: var(--theme-text) !important;
+}
+
+.card-title,
+.card-subtitle,
+.table-th,
+.table-td,
+.single-sidebar-menu > .menu-link,
+.single-sidebar-menu .menu-icon,
+.single-sidebar-menu .menulabel,
+.sidebar-wrapper .text-box,
+.sidebar-wrapper a,
+.sidebar-wrapper h1,
+.sidebar-wrapper label,
+.site-footer,
+.site-footer a,
+.site-footer div {
+  color: var(--theme-text) !important;
+}
+
+.btn-primary,
+.bg-indigo-500,
+.bg-indigo-600,
+.bg-blue-500,
+.bg-blue-600,
+.bg-slate-900 {
+  background-color: var(--theme-primary) !important;
+  color: var(--theme-text) !important;
+}
+
+.hover\:bg-indigo-700:hover,
+.hover\:bg-blue-700:hover,
+.hover\:bg-slate-800:hover {
+  background-color: var(--theme-primary-dark) !important;
+  color: var(--theme-text) !important;
+}
+
+.text-indigo-300,
+.text-indigo-400,
+.text-indigo-500,
+.text-indigo-600,
+.text-indigo-700,
+.text-blue-300,
+.text-blue-500,
+.text-blue-600,
+.text-blue-700 {
+  color: var(--theme-primary-dark) !important;
+}
+
+.bg-indigo-50,
+.bg-indigo-100,
+.bg-blue-50,
+.bg-blue-100,
+.bg-blue-500\/10,
+.dark .dark\:bg-indigo-500\/15,
+.dark .dark\:bg-indigo-500\/20,
+.dark .dark\:bg-blue-500\/10 {
+  background-color: var(--theme-primary-soft) !important;
+}
+
+.border-indigo-400,
+.border-indigo-500,
+.border-indigo-600,
+.border-blue-500,
+.border-blue-600,
+.border-blue-100 {
+  border-color: var(--theme-primary) !important;
+}
+
+.focus\:ring-indigo-500:focus,
+.focus\:ring-blue-500:focus {
+  --tw-ring-color: var(--theme-primary) !important;
+}
+
+.ring-indigo-100 {
+  --tw-ring-color: rgba(24, 152, 165, 0.24) !important;
+}
